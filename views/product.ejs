@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <% if (prods.length > 0) { %>
+
+    <form action="/project" method="post">
+        <label for="">
+            <h3>Type of Service:</h3>
+        </label>
+
+        <select id="service" name="service">
+            <% for (let param of prods) { %>
+            <%if(param.paramCategory === 'Type of service'){ %>
+            <option value="<%= param.paramTitle %>"><%= param.paramTitle %></option>
+            <%}%>
+            <% } %>
+        </select>
+        <label for="">
+            <h3>Type of Paper:</h3>
+        </label>
+
+        <select id="service" name="paper">
+            <% for (let param of prods) { %>
+            <%if(param.paramCategory === 'Type of paper'){ %>
+            <option value="<%= param.paramTitle %>"><%= param.paramTitle %></option>
+            <%}%>
+            <% } %>
+        </select>
+        <label for="">
+            <h3>Subject</h3>
+        </label>
+
+        <select id="service" name="subject">
+            <% for (let param of prods) { %>
+            <%if(param.paramCategory === 'Subject'){ %>
+            <option value="<%= param.paramTitle %>"><%= param.paramTitle %></option>
+            <%}%>
+            <% } %>
+        </select>
+        <br>
+        <label for="">
+            <h3>Topic of Paper:</h3>
+        </label>
+        <input type="text" name="topic" id="">
+        <label for="">
+            <h3>Additional Information:</h3>
+        </label>
+        <textarea name="additionalInformation" id="" cols="50" rows="10"></textarea><br>
+        <label for=""><h3>Document Style:</h3></label>
+        <select name="documentStyle" id="">
+            <option value="MLA">MLA</option>
+            <option value="APA">APA</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Havard">Havard</option>
+            <option value="Turabian">Turabian</option>
+        </select>
+        <label for="">
+            <h3>Urgency:</h3>
+        </label>
+        <select name="urgency" id="">
+            <option value="3">3</option>
+        </select>
+        <label for="">
+            <h3>Number of Sources:</h3>
+        </label>
+        <input type="number" name="numberOfSources" id="">
+        <label for="">
+            <h3>Academic Level:</h3>
+        </label>
+        <select id="" name="academicLevel">
+            <% for (let param of prods) { %>
+            <%if(param.paramCategory === 'Academic Level'){ %>
+            <option value="<%= param.paramTitle %>"><%= param.paramTitle %></option>
+            <%}%>
+            <% } %>
+        </select>
+        <label for="">
+            <h3>Number of Pages:</h3>
+        </label>
+        <input type="number" name="numberOfPages" id=""><br><br>
+        <button class="btn" type="submit">Proceed to Payment</button>
+    </form>
+
+    <% } else { %>
+    <h1>No Products Found!</h1>
+    <% } %>
+
+</body>
+
+</html>
